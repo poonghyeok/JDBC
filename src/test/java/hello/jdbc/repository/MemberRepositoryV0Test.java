@@ -9,6 +9,7 @@ import java.sql.SQLException;
 import java.util.NoSuchElementException;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.junit.jupiter.api.Assertions.*;
 
 @Slf4j
@@ -34,6 +35,6 @@ class MemberRepositoryV0Test {
 
         //delete
         repository.delete(member.getMemberId());
-        Assertions.assertThatThrownBy(() -> repository.findById(member.getMemberId())).isInstanceOf(NoSuchElementException.class); //NoSuchException이 터지는 지 확인, findById 메서드에서 exception을 throw 했기 떄문에 Assertions의 method명도 thrownBy 어떤 에외 클래스에 의해서 예외가 던져지는지 assert하는 검증 과정인가 보다.
+        assertThatThrownBy(() -> repository.findById(member.getMemberId())).isInstanceOf(NoSuchElementException.class); //NoSuchException이 터지는 지 확인, findById 메서드에서 exception을 throw 했기 떄문에 Assertions의 method명도 thrownBy 어떤 에외 클래스에 의해서 예외가 던져지는지 assert하는 검증 과정인가 보다.
     }
 }
