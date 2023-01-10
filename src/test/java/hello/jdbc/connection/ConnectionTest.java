@@ -26,7 +26,7 @@ public class ConnectionTest {
 
     @Test
     void dataSourceDriverManager() throws SQLException {
-        //DriverManagerDataSource - 항상 새로운 커넥션 횓그
+        //DriverManagerDataSource - 항상 새로운 커넥션 획득
         DriverManagerDataSource driverManagerDataSource = new DriverManagerDataSource(URL, USERNAME, PASSWORD);
         useDataSource(driverManagerDataSource);
     }
