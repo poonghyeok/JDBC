@@ -48,7 +48,7 @@ public class MemberServiceV1Test {
     }
 
     @Test
-    @DisplayName("정상 이체")
+    @DisplayName("이체 서비스 예외 처리")
     void accountTransferEx() throws SQLException {
         //given
         Member memberA = new Member(MEMBER_A, 10000);
