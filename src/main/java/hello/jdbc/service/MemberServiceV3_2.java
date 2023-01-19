@@ -30,7 +30,7 @@ public class MemberServiceV3_2 {
 
         txTemplate.executeWithoutResult((status) -> {
             //executeWithoutResult내에서 성공하면 commit, 실패하면 rollback 처리해준다.
-            try {
+            try { //람다식에선 try catch를 잡을 방법이 없기 때문에
                 bizLogic(fromId, toId, money);
             } catch (SQLException e) {
                 throw new IllegalStateException(e);
